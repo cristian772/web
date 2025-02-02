@@ -1,0 +1,147 @@
+/* Styles généraux */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Arial', sans-serif; /* Ajout d'une police lisible */
+}
+
+/* Mode sombre */
+.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+.dark-mode .navbar, .dark-mode footer {
+    background-color: #222;
+    color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar, footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+    color: #ffc107 !important; /* Jaune Bootstrap */
+}
+
+/* Conteneur principal qui pousse le footer en bas */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.container {
+    flex: 1;
+    max-width: 1100px; /* Fixe la largeur du contenu principal */
+    padding: 20px; /* Ajout d'un padding pour espacer le contenu */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+footer:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Bouton de switch de thème */
+#theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+#theme-toggle:hover {
+    color: #ffc107;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.8); /* Ajoute un effet lumineux */
+}
+
+/* Carte de promotion */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Ajout d'une bordure légère */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Bouton de promotion */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Alignement du contenu dans la page */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-md-4 {
+    flex: 1 1 30%;
+    margin-bottom: 20px;
+}
