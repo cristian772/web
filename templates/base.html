@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions Tech & Vêtements</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS (si vous utilisez Bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Bouton de switch de mode sombre -->
+    <button id="theme-toggle" class="theme-toggle-btn">🌙 Mode Sombre</button>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Promotions</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('index') }}">Accueil</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <p>&copy; 2025 Toutes les promotions sont valides selon les stocks disponibles. Suivez-nous sur nos réseaux sociaux.</p>
+        </div>
+    </footer>
+
+    <!-- Script pour le changement de mode -->
+    <script>
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        // Vérifier si le mode sombre est déjà activé dans le stockage local
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+            themeToggleBtn.textContent = "🌞 Mode Clair";
+        }
+
+        themeToggleBtn.addEventListener("click", () => {
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+                themeToggleBtn.textContent = "🌙 Mode Sombre";
+            } else {
+                body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+                themeToggleBtn.textContent = "🌞 Mode Clair";
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS (si vous utilisez Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
